@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: task24x7-front-prod
+   namespace: nodejsprod
+spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: task24x7-front-prod-app
+   template:
+      metadata:
+        labels:
+          app: task24x7-front-prod-app
+      spec:
+        
+        containers:
+        - image: docker-registry-server:5000/task24x7-node-front-prod:tagVersion
+          name: task24x7-front-prod-cont
+          resources:
+                  requests:
+                          memory: "1Mi"
+                          cpu: "0.1"
+                  limits:
+                          memory: "1000Mi"
+                          cpu: "0.7"
+          
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: task24x7-front-prod-svc
+  namespace: nodejsprod
+spec:
+  selector:
+     app: task24x7-front-prod-app
+  type: NodePort
+  ports:
+    - nodePort: 31126
+      port: 5000
+      targetPort: 5000
+      
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: task24x7-front-prod-autoscale
+  namespace: nodejsprod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: task24x7-front-prod
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 75

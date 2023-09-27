@@ -1,0 +1,14 @@
+[1022/170602.279:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0104/165602.436:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0104/174038.964:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0105/001251.160:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0105/212632.137:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\lenovo\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\88e47948-9170-47be-916e-58c4f78893dd: The system cannot find the path specified. (0x3)
+[0106/091917.355:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\lenovo\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\cc0d3846-2cf6-4b29-878a-ff0e06977309: The system cannot find the path specified. (0x3)
+[0106/091922.084:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0106/091922.131:ERROR:exception_snapshot_win.cc(99)] thread ID 13616 not found in process
+[0106/091922.084:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0106/091922.131:ERROR:exception_snapshot_win.cc(99)] thread ID 11044 not found in process
+[0116/005726.208:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0116/010234.908:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\lenovo\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\40520f09-38b1-456b-8858-9b8e84bcd11e: The system cannot find the path specified. (0x3)
+[0116/025619.931:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\lenovo\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\32ea0a60-bf1e-4af5-b308-0cb4146a8e75: The system cannot find the path specified. (0x3)
+[0118/152523.690:ERROR:crash_report_database_win.cc(455)] unexpected header

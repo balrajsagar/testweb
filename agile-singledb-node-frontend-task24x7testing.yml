@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: agile-singledb-front-task24x7testing
+   namespace: nodejspreprod
+spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: agile-singledb-front-task24x7testing-app
+   template:
+      metadata:
+        labels:
+          app: agile-singledb-front-task24x7testing-app
+      spec:
+        
+        containers:
+        - image: docker-registry-server:5000/agile-singledb-node-front-task24x7testing:tagVersion
+          name: agile-singledb-front-task24x7testing-cont
+          resources:
+                  requests:
+                          memory: "1Mi"
+                          cpu: "0.1"
+                  limits:
+                          memory: "500Mi"
+                          cpu: "0.7"
+          
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: agile-singledb-front-task24x7testing-svc
+  namespace: nodejspreprod
+spec:
+  selector:
+     app: agile-singledb-front-task24x7testing-app
+  type: NodePort
+  ports:
+    - nodePort: 31193
+      port: 5000
+      targetPort: 5000
+      
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: agile-singledb-front-task24x7testing-autoscale
+  namespace: nodejsprod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: agile-singledb-front-task24x7testing
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 75
+

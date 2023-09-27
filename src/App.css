@@ -1,0 +1,80 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  font-family:helvetica, arial;
+  font-size:12px
+ }
+.scrumboard{
+ margin:0 auto;
+ width:835px;
+}
+h1{
+ margin-left:20px;
+ font-size:2rem;
+}
+ .column {
+   width: 200px;
+   float: left;
+   border: solid 4px black;
+   height:100vh;
+ }
+ .portlet {
+   margin: 0 1em 1em 0;
+   padding: 0.3em;
+ }
+ .portlet-header {
+   padding: 0.2em 0.3em;
+   margin-bottom: 0.5em;
+   position: relative;
+ }
+ .portlet-toggle {
+   position: absolute;
+   top: 50%;
+   right: 0;
+   margin-top: -8px;
+ }
+ .portlet-content {
+   padding: 0.4em;
+ }
+ .portlet-placeholder {
+   border: 1px dotted black;
+   margin: 0 1em 1em 0;
+   height: 50px;
+ }
